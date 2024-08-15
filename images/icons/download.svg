@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 21" width="28" height="21">
+	<title>download</title>
+	<defs>
+		<image  width="28" height="21" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAVCAMAAABi3H5uAAAAAXNSR0IB2cksfwAAANVQTFRFztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUczTdVQAAAEd0Uk5TABUzJxic7f/qk3XzomxgabH58E6EEi3M/Cpde6UP0gzkjbd+PDkDtOFacpYhbyQwq4c/NkXeHr3GzwkbwKi62NXJV0v255kyi/dKAAABRklEQVR4nGWR20sCQRTGz7Ey1GgJHcEylKUU3NaFAukCPvR/+xB2oYtFJmirEmqKaQvlWiysVjPOrLl6Hna+j985h9lvEGYLEcez9l8uU8S4PVqEfmSDkzLmYcj0rfSZCNNZYxZGEN/Jq2jbxq7Un8LYmOrIb8NZEvb4XqZQ/g6Y61iFRA0gyGaSWHHgbjNa5/t6tLFMRaq+gyUOVT1ZdEOtYY/YALI+qeeGAGSrnHqgcP95rBTmISQ6tnqHJEDwBhYgxN60a1R15X7iPBmkIt0MP3GqGDLKXn5tOLnlgawOuJesER4tnYtFwSH7ZvLCqrqGWTxzklFoCOluS7hoL44hc68g7LH3amOtJkymag+RfB50nFQjlr/tXFZ+jBYRTi8O29P2D53/pSG3lBxLaNP6QglcpeazPzn+KoQMbDfUSvFLevwBK2trr2ImJU8AAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

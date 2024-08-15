@@ -1,0 +1,586 @@
+// mixins
+@import "./mixins";
+
+// Overriding main container width
+.container {
+  @include min-xl {
+    // Above 1200px
+    max-width: 1200px;
+  }
+}
+
+// Hiding footer & page title temporarily as per UI design for basic page content type
+.node {
+  &--type-page {
+
+    footer,
+    .block-page-title-block {
+      display: none;
+    }
+  }
+}
+
+// Main parent for conference view block added through layout builder
+.layout {
+  &--conferences {
+    margin-bottom: 200px;
+
+    /* --- Font family montserrat for all p & div tags inside conference block ---- */
+
+    p,
+    div {
+      font-family: $montserrat;
+      color: $mild-black;
+    }
+
+    /* ---- Title & Subtitle Layout builder custom block starts ---- */
+
+    .block-inline-blockbasic {
+      text-align: center;
+      margin: 25px 0 60px;
+
+      h2,
+      h6 {
+        font-weight: $fw-medium;
+      }
+
+      h2 {
+        color: $mild-black;
+      }
+
+      h6 {
+        color: $mild-gray;
+      }
+    }
+
+    /* ---- Header Tabs Starts ---- */
+
+    // Header tabs parent container
+    .tabs {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 2.35px solid $sky-blue;
+
+      // Header tabs links
+      &__link {
+        @include max-lg {
+          // Below 992px
+          font-size: 14px;
+        }
+
+        @include max-md {
+          // Below 768px
+          padding: 10px 30px;
+        }
+
+        @include max-sm {
+          // Below 576px
+          padding: 10px 5px;
+        }
+
+        @include max-xsm {
+          // Below 400px
+          font-size: 13px;
+        }
+
+        font-family: $montserrat;
+        color: $sky-blue;
+        font-size: 18px;
+        font-weight: $fw-bold;
+        flex: 100%;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        transition: 0.3s;
+
+        &.current {
+
+          // Active tab link styling
+          @include min-lg {
+            // Above 992px
+            font-size: 22px;
+          }
+
+          color: $mild-black;
+          position: relative;
+          transition: 0.3s;
+
+          // Active tab link downward arrow styling
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 20px;
+            height: 0;
+            border-top: solid 11px $white;
+            border-left: solid 10px transparent;
+            border-right: solid 10px transparent;
+            transition: 0.1s;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -11.5px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 20px;
+            height: 10px;
+            border-top: solid 10px $sky-blue;
+            border-left: solid 10px transparent;
+            border-right: solid 10px transparent;
+            transition: 0.1s;
+          }
+        }
+
+        &:hover {
+          // Tab link Hover effect
+          background-color: $light-gray;
+
+          &.current {
+            &::after {
+              border-top-color: $light-gray;
+            }
+          }
+        }
+      }
+    }
+
+    /* ---- Conferences View Block Tab content show/hide based on tab link selection ---- */
+
+    .block-views {
+      // Hiding Featured, recommended, & past view block by default
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .block-content-basic {
+      &:has(.tabs__link--featured.current) {
+        ~.block-views-blockconferences-tab-block-1 {
+          // If Featured tab Link has class "current" then this will disaplay "Featured view block"
+          @include show-tab;
+
+          .views-field-field-image {
+            .field-content {
+
+              // Featured Icon will show on top left corner only for featured block cards
+              &::before {
+                content: "";
+                background: url("../images/icons/featured.svg") left no-repeat;
+                padding: 25px;
+                z-index: 1111;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+
+      &:has(.tabs__link--past.current) {
+        ~.block-views-blockconferences-tab-block-2 {
+          // If Past tab Link has class "current" then this will disaplay "Past view block"
+          @include show-tab;
+        }
+      }
+
+      &:has(.tabs__link--recommended.current) {
+        ~.block-views-blockconferences-tab-block-3 {
+          // If Recommended tab Link has class "current" then this will display "Recommended view block"
+          @include show-tab;
+        }
+      }
+    }
+
+    /* ---- Conference view blocks inner content stylings ---- */
+
+    .view-conferences-tab {
+      .slick {
+        &-arrow {
+          // Slick Arrow Stylings (Shows only on desktop)
+          display: block;
+          margin: 30px auto;
+          width: 20px;
+          height: 20px;
+          border-top: 5px solid $disabled-color;
+          border-left: 5px solid $disabled-color;
+          transform: rotate(-45deg);
+
+          &:hover {
+            // Slick Arrow hover Stylings (Shows only on desktop)
+            border-color: $sky-blue;
+            cursor: pointer;
+          }
+        }
+
+        &-dots {
+
+          // Slick Dots Stylings (Shows only on mobile)
+          li {
+            border: 2px solid $sky-blue;
+            border-radius: 50px;
+
+            &.slick {
+              &-active {
+                // Slick Dots Active element Stylings (Shows only on mobile)
+                background-color: $sky-blue;
+              }
+            }
+          }
+        }
+
+        &-prev {
+          // Slick Prev arrow alignment
+          left: 0;
+        }
+
+        &-next {
+          // Slick Next arrow alignment
+          transform: rotate(135deg);
+          right: 0;
+        }
+
+        &-disabled {
+          // Slick disabled Icon
+          pointer-events: none;
+        }
+
+        &-track {
+
+          // Slick track main parent element
+          @include max-md {
+            // Below 768px
+            gap: 0;
+          }
+
+          display: flex;
+          gap: 30px;
+          padding: 15px 0;
+
+          .views {
+            &-row {
+
+              // Slick Rows child element styling
+              @include min-lg {
+                // Above 992px
+                min-height: 370px;
+              }
+
+              @include max-md {
+                // Below 768px
+                margin: 0 15px;
+              }
+
+              border: 1px solid $border-gray;
+              border-radius: 5px;
+              position: relative;
+              transition: 0.1s;
+
+              .hover-content {
+
+                // Share, download, wishlist icon & view more link will be hidden till 992px & visible only during hover
+                @include min-lg {
+                  // Above 992px
+                  position: absolute;
+                  opacity: 0;
+                  transition: 0.1s;
+                  height: 0;
+                  overflow: hidden;
+                }
+
+                display: flex;
+                align-items: center;
+                border-top: 1px solid $border-gray;
+                width: 100%;
+
+                .icon {
+                  // Right border between each Icon
+                  border-right: 1px solid $border-gray;
+
+                  span {
+
+                    // Common styling for Icons
+                    @include max-md {
+                      // Below 768px
+                      background-size: 25px;
+                      padding: 23px 25px;
+                    }
+
+                    background: url("../images/icons/wishlist.svg") center no-repeat;
+                    font-size: 0;
+                    width: 30px;
+                    height: 21px;
+                    padding: 23px 33px;
+                    display: inline-block;
+                    cursor: pointer;
+                  }
+
+                  &.share {
+                    span {
+                      // Share Icon override
+                      background: url("../images/icons/share.svg") center no-repeat;
+                    }
+                  }
+
+                  &.download {
+                    span {
+                      // Download Icon override
+                      background: url("../images/icons/download.svg") center no-repeat;
+                    }
+                  }
+
+                  &:hover {
+
+                    // Hovering on icon will change svg icon color from gray to skyblue
+                    span {
+                      filter: brightness(0) saturate(100%) invert(28%) sepia(98%) saturate(952%) hue-rotate(173deg) brightness(97%) contrast(102%);
+                    }
+                  }
+                }
+
+                .view-details {
+
+                  // View details link at bottom
+                  @include max-md {
+                    // Below 768px
+                    font-size: 14px;
+                  }
+
+                  text-align: center;
+                  width: 100%;
+
+                  a {
+                    color: $sky-blue;
+                    font-weight: $fw-bold;
+
+                    &:hover {
+                      color: $sky-blue-dark;
+                      text-decoration: none;
+                    }
+                  }
+                }
+              }
+
+              /* ---- Hovering on view-rows ---- */
+
+              &:hover {
+                @include min-lg {
+                  // Above 992px
+                  padding-bottom: 50px;
+                }
+
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.13);
+                transition: 0.1s;
+
+                .hover-content {
+                  @include min-lg {
+                    // Above 992px
+                    opacity: 1;
+                    transition: 0.1s;
+                    height: auto;
+                  }
+                }
+
+                .views-field-field-image {
+                  @include min-lg {
+                    // Above 992px
+                    min-height: 154px;
+                    transition: 0.1s;
+                  }
+
+                  img {
+                    @include min-lg {
+                      // Above 992px
+                      height: 154px;
+                      transition: 0.1s;
+                      object-fit: cover;
+                    }
+                  }
+                }
+              }
+            }
+
+            /* ---- Inner view fields stylings ---- */
+
+            &-field {
+              &:not(.no-spacing) {
+                // Default spacing added for all fields expect fields which ever is having "no-spacing" class
+                padding: 0 30px;
+              }
+
+              &.views {
+                &-field {
+                  // Added bottom spacing for all fields
+                  margin-bottom: 10px;
+                }
+
+                &-field-view-node {
+                  // Removed bottom spacing for last field of the inner content
+                  margin-bottom: 0;
+                }
+
+                &-field-field-location {
+                  // Added extra bottom spacing for location field of the inner content
+                  margin-bottom: 15px;
+                }
+
+                &-field-field-image {
+                  // Alignment of the image field parent
+                  margin-bottom: 15px;
+                  min-height: 200px;
+                  display: flex;
+                  align-items: center;
+                  text-align: center;
+                  transition: 0.1s;
+
+                  .field-content {
+                    width: 100%;
+
+                    img {
+                      // Image styling
+                      border-radius: 5px 5px 0 0;
+                      width: 100%;
+                      transition: 0.1s;
+                    }
+                  }
+
+                  .img-no-result {
+                    // If there is no image then title will be displayed
+                    padding: 15px 25px;
+                    font-weight: $fw-bold;
+
+                    &::before {
+                      // Along with title there will be a mic icon shows on above the title
+                      content: "";
+                      background: url("../images/icons/mic.svg") center no-repeat;
+                      display: block;
+                      padding: 20px;
+                    }
+                  }
+                }
+
+                // Price field styling
+                &-field-field-price {
+                  position: absolute;
+                  top: 10px;
+                  right: 10px;
+                  padding-right: 0;
+
+                  .field-content {
+                    background: rgba(0, 0, 0, 0.38);
+                    color: $white;
+                    padding: 1px 5px;
+                    border: 1px solid $white;
+                    border-radius: 5px;
+                    font-size: 14px;
+
+                    p {
+                      margin-bottom: 0;
+                      color: $white;
+                    }
+                  }
+                }
+
+                // Title field stylings
+                &-field-title {
+                  @include min-lg {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                  }
+
+                  a {
+                    pointer-events: none;
+                    color: $mild-black;
+                    font-size: 16px;
+                    line-height: 21px;
+                    margin-bottom: 10px;
+                    display: block;
+                    font-weight: $fw-bold;
+                    font-family: $montserrat;
+                  }
+                }
+
+                &-field-term-node-tid,
+                &-field-field-date,
+                &-field-field-location {
+
+                  // Category, Date, Location icon common styling
+                  .field-content {
+                    @include max-md {
+                      // Below 768px
+                      padding-left: 35px;
+                    }
+
+                    background: url("../images/icons/category.svg") left center no-repeat;
+                    padding-left: 25px;
+                    font-size: 14px;
+                    font-weight: $fw-medium;
+                    color: $mild-gray;
+                  }
+                }
+
+                // Date field icon override
+                &-field-field-date {
+                  .field-content {
+                    background: url("../images/icons/calendar.svg") left center no-repeat;
+                  }
+                }
+
+                // Calender field icon override
+                &-field-field-location {
+                  .field-content {
+                    background: url("../images/icons/location.svg") left center no-repeat;
+                  }
+                }
+
+                // Common spacing for title, category, date & location for mobile
+                &-field-term-node-tid,
+                &-field-field-date,
+                &-field-field-location,
+                &-field-title {
+                  @media screen and (max-width: 767px) {
+                    padding: 0 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* ---- Show loaded by default untile page loads fully ---- */
+      .view-content {
+        @media screen and (max-width: 767px) {
+          padding: 0;
+        }
+
+        padding: 0 30px;
+        background: url("../images/icons/throbber.gif") no-repeat top center;
+        background-size: 70px;
+
+        >* {
+          opacity: 0;
+        }
+
+        &.slick-initialized {
+          background: none;
+
+          >* {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

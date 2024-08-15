@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 14" width="18" height="14">
+	<title>category</title>
+	<defs>
+		<image  width="18" height="14" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAOCAMAAAAVBLyFAAAAAXNSR0IB2cksfwAAAJNQTFRFztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUZSRWpwAAADF0Uk5TAGnVqEWf6v+TihXP7fP8GOEJD5mEG9jkEgN7Ht72pXUhBqtsJzxOS/nJSMxCOdvngau6l1QAAACnSURBVHicTc/RCoJAEAXQuVtaQcaCRRoR9BBB1P//Rr+QEGVlKGsZWmvLDmb3aTg7C3dAHHDsxDLQEHgTOSh7TP1auMoxL0DOW37uAZkZJIpPZSi8CR+42nVXXggUOnGAtKAmEksc51DpT8hHpxs8xZ9MK8higUMrenzCGoiVaGSYmK60UaOkylsxRNvsXuvaXvUiJlqdH16piQQ3se13SKPZBHv+/QWHRDGE0D9jhQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

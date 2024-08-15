@@ -1,0 +1,96 @@
+/* MIXINS */
+
+//
+// Alternate buttons
+//
+@each $color,
+$value in $theme-colors {
+    .btn-#{$color} a {
+        @include button-variant($value, $value);
+    }
+}
+
+@each $color,
+$value in $theme-colors {
+    .btn-outline-#{$color} a {
+        @include button-outline-variant($value);
+    }
+}
+
+/*------- Custom Breakpoint based on UI design given for Frontend assesment -----*/
+
+
+// Mixin Min width defined
+// Extra Small devices above 400px
+@mixin min-xsm {
+   @media (min-width: #{$screen-xsm-min}) {
+       @content;
+   }
+}
+
+// Small devices above 576px
+@mixin min-sm {
+   @media (min-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+
+// Medium devices above 768px
+@mixin min-md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+
+// Large devices above 992px
+@mixin min-lg {
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+// Extra large devices above 1200px
+@mixin min-xl {
+   @media (min-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+
+
+
+// Mixin Max width defined
+// Extra Small devices below 400px
+@mixin max-xsm {
+   @media (max-width: #{$screen-xsm-max}) {
+       @content;
+   }
+}
+
+// Small devices below 576px
+@mixin max-sm {
+   @media (max-width: #{$screen-sm-max}) {
+       @content;
+   }
+}
+
+// Medium devices below 768px
+@mixin max-md {
+   @media (max-width: #{$screen-md-max}) {
+       @content;
+   }
+}
+
+// Large devices below 992px
+@mixin max-lg {
+   @media (max-width: #{$screen-lg-max}) {
+       @content;
+   }
+}
+
+
+// Custom tabs, show tab content by default 
+@mixin show-tab {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}

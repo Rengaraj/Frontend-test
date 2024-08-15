@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">
+	<title>featured</title>
+	<defs>
+		<image  width="50" height="50" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAAXNSR0IB2cksfwAAAH5QTFRFEtFvEtFvEtFvEtFvEtFvEtFvEtFvEtFvEtFvEtFvMdeC5vrwJtV7jem6////fOavFdJx2/jpYOCeUt2Wguezo+3H0Pbi2Pfn1ffmxPTbwvPaHdN2GNJytPDR8fz3KNV9Wt+bmOvA9/36h+i2kuq9oO3FufHVM9eDv/PYm+zCFVwrLQAAACp0Uk5TABuo5P+BJ+2r8P//////////////////////////////////////////gm3TcAAAAR1JREFUeJyV001rAjEQBuB5sYqWZZWitiAepP//F5WChx7aYqlfpeKq2113606yySQzl8khD+RlJiAURYoCejhrACFD/6QUhEGmFIQ7rdCRq1CRSmhILSzSAw4hYZEB8BMSJkmyTmcXEiZJi7F2NwHRkFGxar/l4f6SH+3XcdGQCbuWfAqiIY/5/ibwIQiW5Ql1imH+LgkeP0nXZRtt96LgZPZd9YsxzZbgJK1/zsObKDiZf41x6Oer6VIUnCyAV6Jn4EUU8iY7hUjcQiIeIRCf8BOv8BK/8BFBeIgk3EQUTiILFwkIBwmJNgmKFgkLm0QIi8QIk0QJg8QJTiIFI7GiIdHiRuLFP1GImmhERVTiSnSiJEpREK0gdLWC/gCZ0VY42APa1gAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

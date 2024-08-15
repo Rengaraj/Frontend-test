@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 22" width="24" height="22">
+	<title>wishlist</title>
+	<defs>
+		<image  width="24" height="22" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAWCAMAAADto6y6AAAAAXNSR0IB2cksfwAAANVQTFRFztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUztDUczTdVQAAAEd0Uk5TAB4zBiotUcz/8JkSA2/h534JjclyP0iQ8zbDq1djqCTe9ku6D8DbVF1pz72l2IH5sbRmG5zklq5CYCFO1ep7GHgVn5Mw/GzrquewAAABKklEQVR4nGWQ3UvCcBSGz7upozkD+0SSNDDalphoSNZF/d3dREGlBC3SCitzi1mS4S7K9aFF+234kTtw4Jzn4ZyLF8QKIPy4U+CX73nI6ZDDHYeuBHwTCYDlihk7DFYfIjqzeFrCS/iz64hIT+yw2wRaMTywaV7i6oRUM37nPqXgCmreJOtzJpRGv0+TpeIKaVR8nDKoQlAu/CL+uohVSfOL3PU6NnHmF4V2G2tGpD3J+RxXRjTVqU8KpZEtgYqaev6fb2uyxiIpfEnH4zz/ttC6Z0JKBMTTEQ9ObTwaXrrR5E3haMC3dNtmUTBBknrJce8uL9pm+pAGgmivpOgWy+JWNiwaEyQLZuaA3z3ZKXuXQ+H8nl42ktgf7ENBwWwlFqqRXxDyzefR9geNsVR4fGnXWAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>
